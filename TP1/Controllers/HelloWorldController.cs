@@ -11,22 +11,18 @@ namespace TP1.Controllers
         //
         // GET: /HelloWorld/
 
-       /* public ActionResult Index()
+        public ActionResult Index()
         {
-            //return View();
-            return 
-        }*/
-        public string Index()
-        {
-            return "This is my <b>default</b> action...";
+           return View();
+           
         }
 
-        //
-        // GET: /HelloWorld/Welcome/
-
-        public string Welcome(string name, int numTimes = 1)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
 
     }
